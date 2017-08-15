@@ -33,7 +33,8 @@ if __name__ == '__main__':
         after.thumbnail((after_width, after_height))
 
         template_height = before_height if before_height > after_height else after_height
-        template_region = template.crop((0, 464 - (54 + template_height), 700, 464))
+        template_box = (0, template.size[0] - (54 + template_height), template.size[1], template.size[0])
+        template_region = template.crop(template_box)
         
         template_region.paste(before, (0,0))
         template_region.paste(after, (360,0))
