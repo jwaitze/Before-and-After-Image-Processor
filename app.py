@@ -5,8 +5,8 @@ def GetFilesListFromDirectory(path):
     file_list = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
     return file_list
 
-image_path = 'C:\\Users\\user\\Desktop\\pps-work\\raw\\'
-done_path = 'C:\\Users\\user\\Desktop\\pps-work\\processed\\'
+image_path = os.getcwd() + '\\raw\\'
+done_path = os.getcwd() + '\\processed\\'
 if __name__ == '__main__':
     files = GetFilesListFromDirectory(image_path)
 
@@ -38,6 +38,6 @@ if __name__ == '__main__':
         template_region.paste(before, (0,0))
         template_region.paste(after, (360,0))
 
-        template_region.save(done_path + str(((i-1)/2)+1) + '.jpg')
+        template_region.save(done_path + str(int(((i-1)/2)+1)) + '.jpg')
         
     print('Completed. %i images processed.' % max_number)        
