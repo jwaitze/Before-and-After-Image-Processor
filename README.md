@@ -1,4 +1,4 @@
-#"Before and After" Image Creator
+# "Before and After" Image Creator
 
 Utilizes PIL to automatically render and save before-and-after images.
 
